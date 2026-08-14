@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Pro Fit</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-black">
+
+<section class="Header">
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="img/pro_fitnes.jpg" alt="Pro Fit">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servico.html">SERVIÇOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">CONTATO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<main>
+    <!-- Carousel -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="25000">
+        <!-- Indicadores inferiores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Imagens do Carrossel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/banner.jpg" class="d-block w-100" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner2.jpg" class="d-block w-100" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner3.png" class="d-block w-100" alt="Banner 3">
+            </div>
+        </div>
+
+        <!-- Controles (Setas Próximo / Anterior) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <!-- MAIS QUE UMA ACADEMIA -->
+    <section class="bg-black text-white py-5">
+        <div class="container py-lg-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <h2 class="fw-bold display-6">
+                        <span class="text-warning">MAIS QUE</span><br>
+                        UMA ACADEMIA
+                    </h2>
+                    <p class="mt-3 lead text-light">
+                        Inspirada nos melhores centros de treinamentos do mundo, nossas estruturas são de alta performance, feitas para alcançar os objetivos dos usuários.
+                    </p>
+                    <p class="text-body-secondary">
+                        Equipamentos modernos, espaços amplos e confortáveis, vestiários premium, profissionais qualificados e aulas diversificadas.
+                    </p>
+                    <a href="servico.html" class="btn btn-warning btn-lg fw-bold mt-3 px-4">MATRICULE-SE</a>
+                </div>
+
+                <div class="col-lg-7 d-flex justify-content-center align-items-center">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80" class="img-fluid w-100 rounded-4 shadow-lg object-fit-cover border border-secondary border-opacity-25" style="max-height: 480px;" alt="Estrutura de Alta Performance Pro Fit">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TREINE COM PROFISSIONAIS -->
+    <section class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 order-lg-1 order-2">
+                    <img src="img/treino.jpg" class="img-fluid rounded shadow" alt="Treino personalizado">
+                </div>
+
+                <div class="col-lg-5 order-lg-2 order-1">
+                    <h2 class="fw-bold">
+                        <span class="text-warning">TREINE COM</span><br>
+                        PROFISSIONAIS
+                    </h2>
+                    <p class="mt-3">
+                        Nossa equipe de personal trainers e professores é altamente qualificada para te acompanhar em cada etapa da sua jornada.
+                    </p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Treinos personalizados</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Acompanhamento nutricional</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Avaliação física completa</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Resultados reais e mensuráveis</li>
+                    </ul>
+                    <a href="contato.html" class="btn btn-outline-warning btn-lg fw-bold mt-3">FALE CONOSCO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A EMPRESA E VALORES -->
+    <section class="bg-black text-white py-5 border-top border-secondary border-opacity-25">
+        <div class="container py-lg-3">
+            <!-- Sobre a Empresa -->
+            <div class="row align-items-center g-5 mb-5 pb-lg-4">
+                <div class="col-lg-6">
+                    <span class="text-warning fw-bold text-uppercase tracking-wider d-block mb-2"><i class="bi bi-heart-pulse-fill me-2"></i>Sua Segunda Casa</span>
+                    <h2 class="fw-bold display-6 mb-4">
+                        Bem-vindo ao espaço que vai <span class="text-warning">transformar sua rotina</span>
+                    </h2>
+                    <p class="lead text-light">
+                        Na Pro Fit, acreditamos que treinar não é apenas sobre levantar pesos — é sobre renovar sua energia, cuidar da sua saúde e construir a sua melhor versão em um ambiente onde você realmente gosta de estar.
+                    </p>
+                    <p class="text-body-secondary">
+                        Criamos uma atmosfera onde cada aluno se sente acolhido desde a primeira aula. Quer você esteja dando os primeiros passos no fitness ou buscando superar marcas pessoais, nosso compromisso é caminhar ao seu lado com respeito ao seu ritmo, motivação constante e sorrisos no rosto.
+                    </p>
+                    <p class="text-body-secondary mb-4">
+                        Venha tomar um café conosco, sentir a vibe da nossa comunidade e descobrir como o exercício pode ser a melhor parte do seu dia!
+                    </p>
+                    <a href="servico.html" class="btn btn-outline-warning fw-bold px-4 py-2">CONHEÇA NOSSO ESPAÇO</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" class="img-fluid rounded-4 shadow-lg border border-secondary border-opacity-25" alt="Nossa Estrutura Pro Fit">
+                </div>
+            </div>
+
+            <!-- Nossos Valores -->
+            <div class="mt-5 pt-4">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold display-6 mb-3">
+                        NOSSOS <span class="text-warning">VALORES</span>
+                    </h2>
+                    <p class="lead fst-italic text-light mx-auto" style="max-width: 720px; font-family: 'Georgia', serif;">
+                        "Construindo mais que atletas: uma comunidade forte onde superação, excelência e respeito caminham lado a lado todos os dias."
+                    </p>
+                </div>
+
+                <!-- Imagem Central em Destaque -->
+                <div class="my-4 text-center">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80" class="img-fluid rounded-4 shadow-lg border border-secondary border-opacity-25 object-fit-cover w-100" style="max-height: 380px; max-width: 900px;" alt="Comunidade Pro Fit">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="rodape">
+    <section class="mb-2 mt-2">
+        <div class="container text-left">
+            <div class="row align-items-end">
+                <div class="col">
+                    <h5 class="text-warning fw-bold mb-3">PRO FIT</h5>
+                    <p class="mb-3">
+                        Mais que uma academia. Um espaço de alta performance feito para transformar sua vida.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col">
+                    <h5 class="text-warning fw-bold">CONTATO</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill text-warning me-2"></i>
+                            Estrada Irmãos Buranello, 10
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone-fill text-warning me-2"></i>
+                            (18) 99157-8702
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill text-warning me-2"></i>
+                            profitpenapolis@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="border-top border-secondary">
+        <div class="container py-3 text-center">
+            <p class="mb-0 small">&copy; PRO FIT 2026 - Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

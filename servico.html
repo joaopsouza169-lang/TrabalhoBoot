@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Serviços | Pro Fit</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Estilo para Títulos Principais da Página */
+        .titulo-pagina {
+            font-style: italic;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Barra vertical ao lado do título das seções, estilo "ESTRUTURA" */
+        .titulo-secao {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .titulo-secao .barra {
+            width: 6px;
+            height: 34px;
+            background-color: #ffc107;
+            flex-shrink: 0;
+        }
+        .titulo-secao .linha {
+            flex-grow: 1;
+            height: 3px;
+            background: linear-gradient(90deg, #ffc107, rgba(255, 193, 7, 0));
+        }
+        .titulo-secao h2 {
+            font-style: italic;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* Faixa com rolagem horizontal da galeria de estrutura */
+        .estrutura-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 18px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+
+            /* Firefox */
+            scrollbar-width: thin;
+            scrollbar-color: #ffc107 #2a2a2a;
+        }
+        /* Chrome, Edge, Safari */
+        .estrutura-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .estrutura-scroll::-webkit-scrollbar-track {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        .estrutura-scroll::-webkit-scrollbar-thumb {
+            background-color: #ffc107;
+            border-radius: 10px;
+        }
+        .estrutura-scroll::-webkit-scrollbar-thumb:hover {
+            background-color: #e0a800;
+        }
+
+        /* Cards da galeria de estrutura */
+        .estrutura-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            flex: 0 0 auto;
+            width: 260px;
+            aspect-ratio: 3 / 4;
+            scroll-snap-align: start;
+        }
+        .estrutura-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .estrutura-card:hover img {
+            transform: scale(1.08);
+        }
+        .estrutura-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,.6) 100%);
+        }
+        .estrutura-label {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 2;
+            color: #ffc107;
+            font-weight: 700;
+            font-style: italic;
+            font-size: .95rem;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
+        .estrutura-dica {
+            font-size: .85rem;
+            color: #999;
+        }
+        .estrutura-dica i {
+            color: #ffc107;
+        }
+
+        /* Toggle Mensal / Anual (usa btn-check do Bootstrap) */
+        .toggle-cobranca .btn {
+            min-width: 140px;
+        }
+        .toggle-cobranca .badge {
+            font-size: .7rem;
+            vertical-align: middle;
+        }
+
+        /* Alinhamento dos textos dos cards de plano */
+        .plano-card .card-body {
+            padding-top: 2rem;
+        }
+        .plano-icone {
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .plano-titulo {
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .plano-preco {
+            min-height: 56px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .plano-preco .preco-anual-info {
+            font-size: .75rem;
+            color: #999;
+        }
+        .plano-descricao {
+            min-height: 72px;
+        }
+        .plano-destaque .card-body {
+            padding-top: 1.25rem;
+        }
+
+        /* ===== SEÇÃO NOSSO TIME ===== */
+        .nosso-time-section {
+            background: radial-gradient(circle at center, rgba(255, 193, 7, 0.15) 0%, rgba(0, 0, 0, 1) 70%);
+            position: relative;
+        }
+        .time-card-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 193, 7, 0.4);
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.25);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .time-card-img:hover {
+            transform: scale(1.05);
+            border-color: #ffc107;
+            box-shadow: 0 0 35px rgba(255, 193, 7, 0.5);
+        }
+        .time-subtitulo {
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+        .time-descricao {
+            font-size: 0.88rem;
+            color: #ccc;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-black">
+
+<section class="Header">
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="img/pro_fitnes.jpg" alt="Pro Fit">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="servico.html">SERVIÇOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">CONTATO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<main>
+    <!-- Cabeçalho da página -->
+    <section class="bg-black text-white text-center py-5">
+        <div class="container">
+            <h1 class="fw-bold display-4 titulo-pagina">
+                <span class="text-warning">NOSSOS</span> SERVIÇOS
+            </h1>
+            <p class="mt-3 mx-auto" style="max-width: 700px;">
+                Conheça nossa estrutura e escolha o plano ideal para o seu objetivo.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== Seção Estrutura (estilo galeria) ===== -->
+    <section class="bg-black text-white pb-5">
+        <div class="container">
+            <div class="titulo-secao mb-2">
+                <div class="barra"></div>
+                <h2 class="fw-bold m-0">ESTRUTURA</h2>
+                <div class="linha"></div>
+            </div>
+            <p class="estrutura-dica mb-3"><i class="bi bi-arrow-left-right me-1"></i>Arraste para o lado para ver mais</p>
+
+            <div class="estrutura-scroll">
+                <div class="estrutura-card">
+                    <img src="https://images.unsplash.com/photo-1545612036-2872840642dc?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Musculação">
+                    <span class="estrutura-label">Musculação</span>
+                </div>
+                <div class="estrutura-card">
+                    <img src="https://images.unsplash.com/photo-1674834727206-4bc272bfd8da?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Crossfit">
+                    <span class="estrutura-label">Crossfit</span>
+                </div>
+                <div class="estrutura-card">
+                    <img src="https://images.unsplash.com/photo-1721394749382-223a18ce8bb9?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Cardio">
+                    <span class="estrutura-label">Cardio</span>
+                </div>
+                <div class="estrutura-card">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Personal Trainer">
+                    <span class="estrutura-label">Personal Trainer</span>
+                </div>
+                <div class="estrutura-card">
+                    <img src="https://marciatravessoni.com.br/wp-content/uploads/2023/02/f55dfc6e-8b90-49c2-913c-08bdc64062c2-1-1024x819.jpeg" alt="Espaço e lounge">
+                    <span class="estrutura-label">Espaço &amp; Lounge</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Seção Planos ===== -->
+    <section class="bg-black text-white pb-5">
+        <div class="container">
+            <div class="titulo-secao mb-4">
+                <div class="barra"></div>
+                <h2 class="fw-bold m-0">PLANOS</h2>
+                <div class="linha"></div>
+            </div>
+
+            <!-- Toggle Mensal / Anual -->
+            <div class="text-center mb-5">
+                <div class="btn-group toggle-cobranca" role="group" aria-label="Forma de cobrança">
+                    <input type="radio" class="btn-check" name="cobranca" id="cobrancaMensal" autocomplete="off" checked>
+                    <label class="btn btn-outline-warning fw-bold" for="cobrancaMensal">Mensal</label>
+
+                    <input type="radio" class="btn-check" name="cobranca" id="cobrancaAnual" autocomplete="off">
+                    <label class="btn btn-outline-warning fw-bold" for="cobrancaAnual">
+                        Anual <span class="badge bg-warning text-dark ms-1">-15%</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center align-items-start">
+
+                <!-- Plano Básico -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card plano-card bg-dark text-white h-100 border-secondary shadow">
+                        <div class="card-body d-flex flex-column text-center">
+                            <div class="plano-icone"><i class="bi bi-lightning-charge text-warning display-5"></i></div>
+                            <div class="plano-titulo"><h4 class="card-title fw-bold m-0">Básico</h4></div>
+                            <div class="plano-preco">
+                                <p class="text-warning fs-3 fw-bold mb-0 preco-mensal">R$ 89,90<small class="text-white fs-6">/mês</small></p>
+                                <p class="text-warning fs-3 fw-bold mb-0 preco-anual d-none">R$ 76,40<small class="text-white fs-6">/mês</small></p>
+                                <span class="preco-anual-info preco-anual d-none">cobrado R$ 916,80/ano</span>
+                            </div>
+                            <p class="card-text plano-descricao flex-grow-1">Perfeito para começar: acesso total à musculação e à área de crossfit.</p>
+                            <button type="button" class="btn btn-warning fw-bold mt-3" data-bs-toggle="modal" data-bs-target="#modalBasico">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plano Plus -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card plano-card plano-destaque bg-dark text-white h-100 border-warning shadow">
+                        <div class="card-header bg-warning text-black text-center fw-bold">MAIS ESCOLHIDO</div>
+                        <div class="card-body d-flex flex-column text-center">
+                            <div class="plano-icone"><i class="bi bi-graph-up-arrow text-warning display-5"></i></div>
+                            <div class="plano-titulo"><h4 class="card-title fw-bold m-0">Plus</h4></div>
+                            <div class="plano-preco">
+                                <p class="text-warning fs-3 fw-bold mb-0 preco-mensal">R$ 139,90<small class="text-white fs-6">/mês</small></p>
+                                <p class="text-warning fs-3 fw-bold mb-0 preco-anual d-none">R$ 118,90<small class="text-white fs-6">/mês</small></p>
+                                <span class="preco-anual-info preco-anual d-none">cobrado R$ 1.426,80/ano</span>
+                            </div>
+                            <p class="card-text plano-descricao flex-grow-1">Tudo do Básico, com aulas em grupo liberadas e avaliação física inclusa.</p>
+                            <button type="button" class="btn btn-warning fw-bold mt-3" data-bs-toggle="modal" data-bs-target="#modalPlus">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plano Premium -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card plano-card bg-dark text-white h-100 border-secondary shadow">
+                        <div class="card-body d-flex flex-column text-center">
+                            <div class="plano-icone"><i class="bi bi-trophy text-warning display-5"></i></div>
+                            <div class="plano-titulo"><h4 class="card-title fw-bold m-0">Premium</h4></div>
+                            <div class="plano-preco">
+                                <p class="text-warning fs-3 fw-bold mb-0 preco-mensal">R$ 249,90<small class="text-white fs-6">/mês</small></p>
+                                <p class="text-warning fs-3 fw-bold mb-0 preco-anual d-none">R$ 212,40<small class="text-white fs-6">/mês</small></p>
+                                <span class="preco-anual-info preco-anual d-none">cobrado R$ 2.548,80/ano</span>
+                            </div>
+                            <p class="card-text plano-descricao flex-grow-1">A experiência completa: tudo do Plus + Personal Trainer incluso no plano.</p>
+                            <button type="button" class="btn btn-warning fw-bold mt-3" data-bs-toggle="modal" data-bs-target="#modalPremium">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO NOSSO TIME ===== -->
+    <section class="nosso-time-section text-white py-5">
+        <div class="container text-center py-4">
+
+            <h2 class="display-5 fw-bold titulo-pagina text-white mb-1">
+                NOSSO TIME
+            </h2>
+            <p class="text-warning fw-bold text-uppercase time-subtitulo mb-5">
+                CONHEÇA ALGUNS PROFISSIONAIS DA EQUIPE PRO FIT
+            </p>
+
+            <div class="row g-4 justify-content-center align-items-stretch mb-4">
+
+                <!-- Profissional 1 -->
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+                    <div class="mb-3">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop" alt="Stella Lima" class="time-card-img">
+                    </div>
+                    <h3 class="fw-bold fs-4 text-uppercase mb-2 text-white" style="font-style: italic;">STELLA LIMA</h3>
+                    <p class="time-descricao">
+                        Educadora Física. Pós-graduada em Dança: Arte, Esporte e Educação. Professora e Especialista em Aulas Coletivas desde 2015.
+                    </p>
+                </div>
+
+                <!-- Profissional 2 -->
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+                    <div class="mb-3">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=600&auto=format&fit=crop" alt="Jonas Sena" class="time-card-img">
+                    </div>
+                    <h3 class="fw-bold fs-4 text-uppercase mb-2 text-white" style="font-style: italic;">JONAS SENA</h3>
+                    <p class="time-descricao">
+                        Educador Físico (Coach). Consultor Fitness. Pós em Fisiologia do Exercício e Performance do Exercício. Criador de conteúdo digital.
+                    </p>
+                </div>
+
+                <!-- Profissional 3 -->
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+                    <div class="mb-3">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Carla Braz" class="time-card-img">
+                    </div>
+                    <h3 class="fw-bold fs-4 text-uppercase mb-2 text-white" style="font-style: italic;">CARLA BRAZ</h3>
+                    <p class="time-descricao">
+                        Embaixadora e Consultora Esportiva. Empreendedora. Especialista em Gestão de Saúde, Moda Fitness e Performance.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Botão Ver Todos -->
+            <div class="mt-4 pt-3">
+                <a href="#" class="btn btn-warning fw-bold text-uppercase px-4 py-2">
+                    VEJA TODOS OS PROFISSIONAIS
+                </a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<script>
+    // Alterna entre preço mensal e anual nos cards de plano
+    document.querySelectorAll('input[name="cobranca"]').forEach(function (input) {
+        input.addEventListener('change', function () {
+            var mostrarAnual = document.getElementById('cobrancaAnual').checked;
+            document.querySelectorAll('.preco-mensal').forEach(function (el) {
+                el.classList.toggle('d-none', mostrarAnual);
+            });
+            document.querySelectorAll('.preco-anual').forEach(function (el) {
+                el.classList.toggle('d-none', !mostrarAnual);
+            });
+        });
+    });
+</script>
+
+<!-- ================= MODAIS ================= -->
+
+<!-- Modal Básico -->
+<div class="modal fade" id="modalBasico" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border border-warning">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning fw-bold">Plano Básico</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p class="fs-4 fw-bold text-warning">R$ 89,90 <small class="text-white fs-6">/mês</small></p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Acesso total à área de musculação</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Acesso total à área de crossfit</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Uso livre de equipamentos e cardio</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Vestiários premium</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Sem fidelidade</li>
+                </ul>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+                <a href="contato.html" class="btn btn-warning fw-bold">Quero este plano</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Plus -->
+<div class="modal fade" id="modalPlus" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border border-warning">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning fw-bold">Plano Plus</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p class="fs-4 fw-bold text-warning">R$ 139,90 <small class="text-white fs-6">/mês</small></p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Tudo do plano Básico</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Aulas em grupo liberadas (funcional, spinning, jump)</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>1 avaliação física inclusa</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Desconto em produtos da loja parceira</li>
+                </ul>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+                <a href="contato.html" class="btn btn-warning fw-bold">Quero este plano</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Premium -->
+<div class="modal fade" id="modalPremium" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border border-warning">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning fw-bold">Plano Premium</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p class="fs-4 fw-bold text-warning">R$ 249,90 <small class="text-white fs-6">/mês</small></p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Tudo do plano Plus</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Personal Trainer incluso no plano</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Avaliações físicas mensais</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Prioridade de horários nas aulas</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Congelamento gratuito de até 15 dias</li>
+                </ul>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+                <a href="contato.html" class="btn btn-warning fw-bold">Quero este plano</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="rodape">
+
+    <section class="mb-2 mt-2">
+
+        <div class="container text-left">
+            <div class="row align-items-end">
+                <div class="col">
+                    <h5 class="text-warning fw-bold mb-3">PRO FIT</h5>
+                    <p class="mb-3">
+                        Mais que uma academia. Um espaço de alta performance feito para transformar sua vida.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col ">
+                    <h5 class="text-warning fw-bold ">CONTATO</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill text-warning me-2"></i>
+                            Estrada Irmãos Buranello, 10
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone-fill text-warning me-2"></i>
+                            (18) 99157-8702
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill text-warning me-2"></i>
+                            profitpenapolis@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="border-top border-secondary ">
+        <div class="container py-3 text-center">
+            <p class="mb-0 small">&copy; PRO FIT 2026 - Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.logo {
+    max-height: 50px;
+    border-radius: 20px;
+}
+
+.rodape {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.rodape a:hover {
+    color: #ffc107 !important;
+    transition: 0.3s;
+}
+
+
+.rounded.shadow {
+    transition: transform 0.3s ease;
+}
+
+.rounded.shadow:hover {
+    transform: scale(1.02);
+}
+
