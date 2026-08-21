@@ -6,17 +6,16 @@
     <title>Serviços | Pro Fit</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Ícones Bootstrap -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        /* Estilo para Títulos Principais da Página */
+
         .titulo-pagina {
             font-style: italic;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        /* Barra vertical ao lado do título das seções, estilo "ESTRUTURA" */
         .titulo-secao {
             display: flex;
             align-items: center;
@@ -39,7 +38,6 @@
             white-space: nowrap;
         }
 
-        /* Faixa com rolagem horizontal da galeria de estrutura */
         .estrutura-scroll {
             display: flex;
             gap: 16px;
@@ -49,11 +47,10 @@
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
 
-            /* Firefox */
             scrollbar-width: thin;
             scrollbar-color: #ffc107 #2a2a2a;
         }
-        /* Chrome, Edge, Safari */
+
         .estrutura-scroll::-webkit-scrollbar {
             height: 8px;
         }
@@ -69,7 +66,6 @@
             background-color: #e0a800;
         }
 
-        /* Cards da galeria de estrutura */
         .estrutura-card {
             position: relative;
             border-radius: 10px;
@@ -114,7 +110,6 @@
             color: #ffc107;
         }
 
-        /* Toggle Mensal / Anual (usa btn-check do Bootstrap) */
         .toggle-cobranca .btn {
             min-width: 140px;
         }
@@ -123,7 +118,6 @@
             vertical-align: middle;
         }
 
-        /* Alinhamento dos textos dos cards de plano */
         .plano-card .card-body {
             padding-top: 2rem;
         }
@@ -157,7 +151,6 @@
             padding-top: 1.25rem;
         }
 
-        /* ===== SEÇÃO NOSSO TIME ===== */
         .nosso-time-section {
             background: radial-gradient(circle at center, rgba(255, 193, 7, 0.15) 0%, rgba(0, 0, 0, 1) 70%);
             position: relative;
@@ -185,6 +178,79 @@
             color: #ccc;
             max-width: 300px;
             margin: 0 auto;
+        }
+
+        /* ===== Emagrecimento Rápido ===== */
+        .emagrecimento-selo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1px solid #ffc107;
+            color: #ffc107;
+            font-weight: 700;
+            font-size: .78rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 50px;
+        }
+        .emagrecimento-img-wrap {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .emagrecimento-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .emagrecimento-lista li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .emagrecimento-lista i {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+        .emagrecimento-stats {
+            border-top: 1px solid #2a2a2a;
+        }
+        .emagrecimento-stats .stat-num {
+            color: #ffc107;
+            font-weight: 700;
+        }
+        .emagrecimento-stats .stat-label {
+            font-size: .75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .emagrecimento-card {
+            background: #161616;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+        .emagrecimento-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .emagrecimento-card .card-body i {
+            color: #ffc107;
+        }
+        .garantia-box {
+            background: #1a1a1a;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+        }
+        .garantia-box i {
+            color: #ffc107;
         }
     </style>
 </head>
@@ -217,7 +283,7 @@
 </section>
 
 <main>
-    <!-- Cabeçalho da página -->
+
     <section class="bg-black text-white text-center py-5">
         <div class="container">
             <h1 class="fw-bold display-4 titulo-pagina">
@@ -229,7 +295,6 @@
         </div>
     </section>
 
-    <!-- ===== Seção Estrutura (estilo galeria) ===== -->
     <section class="bg-black text-white pb-5">
         <div class="container">
             <div class="titulo-secao mb-2">
@@ -264,7 +329,6 @@
         </div>
     </section>
 
-    <!-- ===== Seção Planos ===== -->
     <section class="bg-black text-white pb-5">
         <div class="container">
             <div class="titulo-secao mb-4">
@@ -273,7 +337,6 @@
                 <div class="linha"></div>
             </div>
 
-            <!-- Toggle Mensal / Anual -->
             <div class="text-center mb-5">
                 <div class="btn-group toggle-cobranca" role="group" aria-label="Forma de cobrança">
                     <input type="radio" class="btn-check" name="cobranca" id="cobrancaMensal" autocomplete="off" checked>
@@ -288,7 +351,6 @@
 
             <div class="row g-4 justify-content-center align-items-start">
 
-                <!-- Plano Básico -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card plano-card bg-dark text-white h-100 border-secondary shadow">
                         <div class="card-body d-flex flex-column text-center">
@@ -297,7 +359,7 @@
                             <div class="plano-preco">
                                 <p class="text-warning fs-3 fw-bold mb-0 preco-mensal">R$ 89,90<small class="text-white fs-6">/mês</small></p>
                                 <p class="text-warning fs-3 fw-bold mb-0 preco-anual d-none">R$ 76,40<small class="text-white fs-6">/mês</small></p>
-                                <span class="preco-anual-info preco-anual d-none">cobrado R$ 916,80/ano</span>
+                                <span class="preco-anual-info preco-anual d-none"></span>
                             </div>
                             <p class="card-text plano-descricao flex-grow-1">Perfeito para começar: acesso total à musculação e à área de crossfit.</p>
                             <button type="button" class="btn btn-warning fw-bold mt-3" data-bs-toggle="modal" data-bs-target="#modalBasico">
@@ -307,7 +369,6 @@
                     </div>
                 </div>
 
-                <!-- Plano Plus -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card plano-card plano-destaque bg-dark text-white h-100 border-warning shadow">
                         <div class="card-header bg-warning text-black text-center fw-bold">MAIS ESCOLHIDO</div>
@@ -317,7 +378,7 @@
                             <div class="plano-preco">
                                 <p class="text-warning fs-3 fw-bold mb-0 preco-mensal">R$ 139,90<small class="text-white fs-6">/mês</small></p>
                                 <p class="text-warning fs-3 fw-bold mb-0 preco-anual d-none">R$ 118,90<small class="text-white fs-6">/mês</small></p>
-                                <span class="preco-anual-info preco-anual d-none">cobrado R$ 1.426,80/ano</span>
+                                <span class="preco-anual-info preco-anual d-none"></span>
                             </div>
                             <p class="card-text plano-descricao flex-grow-1">Tudo do Básico, com aulas em grupo liberadas e avaliação física inclusa.</p>
                             <button type="button" class="btn btn-warning fw-bold mt-3" data-bs-toggle="modal" data-bs-target="#modalPlus">
@@ -327,7 +388,6 @@
                     </div>
                 </div>
 
-                <!-- Plano Premium -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card plano-card bg-dark text-white h-100 border-secondary shadow">
                         <div class="card-body d-flex flex-column text-center">
@@ -336,7 +396,7 @@
                             <div class="plano-preco">
                                 <p class="text-warning fs-3 fw-bold mb-0 preco-mensal">R$ 249,90<small class="text-white fs-6">/mês</small></p>
                                 <p class="text-warning fs-3 fw-bold mb-0 preco-anual d-none">R$ 212,40<small class="text-white fs-6">/mês</small></p>
-                                <span class="preco-anual-info preco-anual d-none">cobrado R$ 2.548,80/ano</span>
+                                <span class="preco-anual-info preco-anual d-none"></span>
                             </div>
                             <p class="card-text plano-descricao flex-grow-1">A experiência completa: tudo do Plus + Personal Trainer incluso no plano.</p>
                             <button type="button" class="btn btn-warning fw-bold mt-3" data-bs-toggle="modal" data-bs-target="#modalPremium">
@@ -350,7 +410,112 @@
         </div>
     </section>
 
-    <!-- ===== SEÇÃO NOSSO TIME ===== -->
+    <section class="bg-black text-white pb-5">
+        <div class="container">
+
+            <div class="titulo-secao mb-4">
+                <div class="barra"></div>
+                <h2 class="fw-bold m-0">EMAGRECIMENTO RÁPIDO</h2>
+                <div class="linha"></div>
+            </div>
+
+            <div class="row align-items-center g-5 mb-5">
+
+                <div class="col-lg-6">
+                    <div class="emagrecimento-img-wrap" style="aspect-ratio: 4/3.2;">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" alt="Aluna em treino de emagrecimento na Pro Fit">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <span class="emagrecimento-selo mb-3">
+                        <i class="bi bi-fire"></i> RESULTADOS EM ATÉ 30 DIAS
+                    </span>
+                    <h3 class="fw-bold mt-3 mb-3" style="font-style: italic;">
+                        Perca peso de verdade, <span class="text-warning">com acompanhamento de quem entende.</span>
+                    </h3>
+                    <p class="mb-4" style="color:#ccc;">
+                        Um protocolo criado pelos nossos profissionais unindo treino de alta intensidade,
+                        acompanhamento nutricional e avaliações periódicas para acelerar sua queima de
+                        gordura sem perder massa muscular.
+                    </p>
+
+                    <ul class="list-unstyled emagrecimento-lista">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>Treino HIIT + Queima de Gordura</strong> — aulas de alta intensidade focadas em resultado rápido</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>Avaliação física completa</strong> — bioimpedância e acompanhamento de medidas a cada 15 dias</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>Plano alimentar orientado</strong> — parceria com nutricionista para potencializar os resultados</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>Acompanhamento próximo</strong> — professores especializados corrigindo e motivando em cada treino</span>
+                        </li>
+                    </ul>
+
+                    <div class="row emagrecimento-stats text-center py-3 my-4">
+                        <div class="col-4">
+                            <div class="stat-num fs-3">+500</div>
+                            <div class="stat-label">Alunos transformados</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-num fs-3">30 dias</div>
+                            <div class="stat-label">Primeiros resultados</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-num fs-3">4.9<i class="bi bi-star-fill ms-1" style="font-size:.9rem;"></i></div>
+                            <div class="stat-label">Avaliação dos alunos</div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-warning fw-bold text-uppercase px-4" data-bs-toggle="modal" data-bs-target="#modalEmagrecimento">
+                        Ver detalhes
+                    </button>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="emagrecimento-card">
+                        <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?q=80&w=800&auto=format&fit=crop" alt="Aula de HIIT">
+                        <div class="card-body p-3">
+                            <i class="bi bi-lightning-charge fs-5 me-2"></i>
+                            <span class="fw-bold text-uppercase">HIIT & Queima Total</span>
+                            <p class="small text-white-50 mt-2 mb-0">Aulas dinâmicas que aceleram o metabolismo e maximizam o gasto calórico.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="emagrecimento-card">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop" alt="Avaliação física">
+                        <div class="card-body p-3">
+                            <i class="bi bi-clipboard2-pulse fs-5 me-2"></i>
+                            <span class="fw-bold text-uppercase">Avaliação Quinzenal</span>
+                            <p class="small text-white-50 mt-2 mb-0">Acompanhe sua evolução de perto com medições e ajustes constantes no treino.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="emagrecimento-card">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop" alt="Orientação nutricional">
+                        <div class="card-body p-3">
+                            <i class="bi bi-egg-fried fs-5 me-2"></i>
+                            <span class="fw-bold text-uppercase">Orientação Nutricional</span>
+                            <p class="small text-white-50 mt-2 mb-0">Dicas e plano alimentar direcionado para turbinar seus resultados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="nosso-time-section text-white py-5">
         <div class="container text-center py-4">
 
@@ -363,7 +528,6 @@
 
             <div class="row g-4 justify-content-center align-items-stretch mb-4">
 
-                <!-- Profissional 1 -->
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
                     <div class="mb-3">
                         <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop" alt="Stella Lima" class="time-card-img">
@@ -374,7 +538,6 @@
                     </p>
                 </div>
 
-                <!-- Profissional 2 -->
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
                     <div class="mb-3">
                         <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=600&auto=format&fit=crop" alt="Jonas Sena" class="time-card-img">
@@ -385,7 +548,6 @@
                     </p>
                 </div>
 
-                <!-- Profissional 3 -->
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
                     <div class="mb-3">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Carla Braz" class="time-card-img">
@@ -398,7 +560,6 @@
 
             </div>
 
-            <!-- Botão Ver Todos -->
             <div class="mt-4 pt-3">
                 <a href="#" class="btn btn-warning fw-bold text-uppercase px-4 py-2">
                     VEJA TODOS OS PROFISSIONAIS
@@ -410,7 +571,7 @@
 </main>
 
 <script>
-    // Alterna entre preço mensal e anual nos cards de plano
+
     document.querySelectorAll('input[name="cobranca"]').forEach(function (input) {
         input.addEventListener('change', function () {
             var mostrarAnual = document.getElementById('cobrancaAnual').checked;
@@ -424,9 +585,6 @@
     });
 </script>
 
-<!-- ================= MODAIS ================= -->
-
-<!-- Modal Básico -->
 <div class="modal fade" id="modalBasico" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark text-white border border-warning">
@@ -446,13 +604,12 @@
             </div>
             <div class="modal-footer border-secondary">
                 <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
-                <a href="contato.html" class="btn btn-warning fw-bold">Quero este plano</a>
+                <a href="#" class="btn btn-warning fw-bold">Quero este plano</a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal Plus -->
 <div class="modal fade" id="modalPlus" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark text-white border border-warning">
@@ -471,13 +628,12 @@
             </div>
             <div class="modal-footer border-secondary">
                 <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
-                <a href="contato.html" class="btn btn-warning fw-bold">Quero este plano</a>
+                <a href="#" class="btn btn-warning fw-bold">Quero este plano</a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal Premium -->
 <div class="modal fade" id="modalPremium" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark text-white border border-warning">
@@ -497,7 +653,39 @@
             </div>
             <div class="modal-footer border-secondary">
                 <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
-                <a href="contato.html" class="btn btn-warning fw-bold">Quero este plano</a>
+                <a href="#" class="btn btn-warning fw-bold">Quero este plano</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEmagrecimento" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border border-warning">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning fw-bold">Programa Emagrecimento Rápido</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-white-50 mb-3">Protocolo incluso a partir do plano Plus, com acompanhamento próximo da nossa equipe.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Treino HIIT + Queima de Gordura</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Avaliação física a cada 15 dias</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Orientação nutricional com profissional parceiro</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Acompanhamento individual em cada treino</li>
+                </ul>
+                <div class="garantia-box p-3 mt-3">
+                    <p class="mb-0 small">
+                        <i class="bi bi-shield-check me-2"></i>
+                        <strong class="text-warning">Garantia de resultado:</strong>
+                        seguindo o protocolo à risca e não atingindo o objetivo combinado na avaliação, devolvemos seu investimento.
+                    </p>
+                </div>
+                <p class="small text-white-50 mt-3 mb-0">*Resultados podem variar de pessoa para pessoa, conforme frequência, alimentação e orientação profissional. Condições da garantia detalhadas na avaliação inicial.</p>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+                <a href="#" class="btn btn-warning fw-bold">Quero este plano</a>
             </div>
         </div>
     </div>
